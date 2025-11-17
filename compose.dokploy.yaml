@@ -5,7 +5,7 @@ x-custom-image: &custom_image
     args:
       FRAPPE_PATH: "https://github.com/frappe/frappe"
       FRAPPE_BRANCH: "version-15"
-      APPS_JSON_BASE_64: WwogIHsKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL2ZyYXBwZS9lcnBuZXh0IiwKICAgICJicmFuY2giOiAidmVyc2lvbi0xNSIKICB9LAogIHsKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL2ZyYXBwZS9jcm0iLAogICAgImJyYW5jaCI6ICJtYWluIgogIH0sCiAgewogICAgInVybCI6ICJodHRwczovL2dpdGh1Yi5jb20vZnJhcHBlL3ByaW50X2Rlc2lnbmVyIiwKICAgICJicmFuY2giOiAibWFpbiIKICB9Cl0K
+      APPS_JSON_BASE_64: WwogIHsKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL2ZyYXBwZS9lcnBuZXh0IiwKICAgICJicmFuY2giOiAidmVyc2lvbi0xNSIKICB9LAogIHsKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL2ZyYXBwZS9jcm0iLAogICAgImJyYW5jaCI6ICJtYWluIgogIH0KXQo=
   pull_policy: ${PULL_POLICY:-always}
   deploy:
     restart_policy:
@@ -237,7 +237,6 @@ services:
         bench new-site --mariadb-user-host-login-scope='%' --admin-password=$${ADMIN_PASSWORD} --db-root-username=root --db-root-password=$${DB_ROOT_PASSWORD} $${SITE_NAME};
         bench --site $${SITE_NAME} install-app erpnext;
         bench --site $${SITE_NAME} install-app crm;
-        bench --site $${SITE_NAME} install-app print_designer;
     volumes:
       - sites:/home/frappe/frappe-bench/sites
     environment:
