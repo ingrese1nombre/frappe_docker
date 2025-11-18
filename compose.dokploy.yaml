@@ -238,6 +238,7 @@ services:
         bench --site $${SITE_NAME} install-app erpnext;
         bench --site $${SITE_NAME} install-app print_designer;
         bench --site $${SITE_NAME} install-app crm;
+        echo "site created!";
     volumes:
       - sites:/home/frappe/frappe-bench/sites
     environment:
